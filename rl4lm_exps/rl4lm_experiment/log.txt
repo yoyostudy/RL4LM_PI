@@ -714,3 +714,125 @@
 2024-04-19 19:12:01,646 [DEBUG] Starting new HTTPS connection (1): api.wandb.ai:443
 2024-04-19 19:12:01,836 [DEBUG] https://api.wandb.ai:443 "POST /graphql HTTP/1.1" 200 None
 2024-04-19 19:12:01,956 [DEBUG] Popen(['git', 'cat-file', '--batch-check'], cwd=/home/yoyo/Documents/on_gpu/RL4LMs, stdin=<valid stream>, shell=False, universal_newlines=False)
+2024-04-19 19:26:39,576 [DEBUG] Starting new HTTPS connection (1): huggingface.co:443
+2024-04-19 19:26:39,805 [DEBUG] https://huggingface.co:443 "HEAD /t5-base/resolve/main/tokenizer_config.json HTTP/1.1" 404 0
+2024-04-19 19:26:39,810 [DEBUG] Starting new HTTPS connection (1): huggingface.co:443
+2024-04-19 19:26:40,057 [DEBUG] https://huggingface.co:443 "HEAD /t5-base/resolve/main/config.json HTTP/1.1" 200 0
+2024-04-19 19:26:40,063 [DEBUG] Starting new HTTPS connection (1): huggingface.co:443
+2024-04-19 19:26:40,252 [DEBUG] https://huggingface.co:443 "HEAD /t5-base/resolve/main/tokenizer_config.json HTTP/1.1" 404 0
+2024-04-19 19:26:40,258 [DEBUG] Starting new HTTPS connection (1): huggingface.co:443
+2024-04-19 19:26:40,470 [DEBUG] https://huggingface.co:443 "HEAD /t5-base/resolve/main/spiece.model HTTP/1.1" 200 0
+2024-04-19 19:26:40,476 [DEBUG] Starting new HTTPS connection (1): huggingface.co:443
+2024-04-19 19:26:40,695 [DEBUG] https://huggingface.co:443 "HEAD /t5-base/resolve/main/tokenizer.json HTTP/1.1" 200 0
+2024-04-19 19:26:40,701 [DEBUG] Starting new HTTPS connection (1): huggingface.co:443
+2024-04-19 19:26:40,887 [DEBUG] https://huggingface.co:443 "HEAD /t5-base/resolve/main/added_tokens.json HTTP/1.1" 404 0
+2024-04-19 19:26:40,893 [DEBUG] Starting new HTTPS connection (1): huggingface.co:443
+2024-04-19 19:26:41,091 [DEBUG] https://huggingface.co:443 "HEAD /t5-base/resolve/main/special_tokens_map.json HTTP/1.1" 404 0
+2024-04-19 19:26:41,096 [DEBUG] Starting new HTTPS connection (1): huggingface.co:443
+2024-04-19 19:26:41,289 [DEBUG] https://huggingface.co:443 "HEAD /t5-base/resolve/main/tokenizer_config.json HTTP/1.1" 404 0
+2024-04-19 19:26:41,295 [DEBUG] Starting new HTTPS connection (1): huggingface.co:443
+2024-04-19 19:26:41,475 [DEBUG] https://huggingface.co:443 "HEAD /t5-base/resolve/main/config.json HTTP/1.1" 200 0
+2024-04-19 19:26:41,507 [DEBUG] Starting new HTTPS connection (1): s3.amazonaws.com:443
+2024-04-19 19:26:41,813 [DEBUG] https://s3.amazonaws.com:443 "HEAD /datasets.huggingface.co/datasets/datasets/json/json.py HTTP/1.1" 200 0
+2024-04-19 19:26:41,826 [DEBUG] Attempting to acquire lock 131507137380016 on /home/yoyo/.cache/huggingface/datasets/_home_yoyo_.cache_huggingface_datasets_json_default-b0856beeb4ee702e_0.0.0_ab573428e7a11a7e23eebd41a2a71665ac3789ce311cbad7049572034a9bda05.lock
+2024-04-19 19:26:41,830 [DEBUG] Lock 131507137380016 acquired on /home/yoyo/.cache/huggingface/datasets/_home_yoyo_.cache_huggingface_datasets_json_default-b0856beeb4ee702e_0.0.0_ab573428e7a11a7e23eebd41a2a71665ac3789ce311cbad7049572034a9bda05.lock
+2024-04-19 19:26:41,832 [DEBUG] Attempting to release lock 131507137380016 on /home/yoyo/.cache/huggingface/datasets/_home_yoyo_.cache_huggingface_datasets_json_default-b0856beeb4ee702e_0.0.0_ab573428e7a11a7e23eebd41a2a71665ac3789ce311cbad7049572034a9bda05.lock
+2024-04-19 19:26:41,834 [DEBUG] Lock 131507137380016 released on /home/yoyo/.cache/huggingface/datasets/_home_yoyo_.cache_huggingface_datasets_json_default-b0856beeb4ee702e_0.0.0_ab573428e7a11a7e23eebd41a2a71665ac3789ce311cbad7049572034a9bda05.lock
+2024-04-19 19:26:41,844 [DEBUG] Attempting to acquire lock 131507137405808 on /home/yoyo/.cache/huggingface/datasets/json/default-b0856beeb4ee702e/0.0.0/ab573428e7a11a7e23eebd41a2a71665ac3789ce311cbad7049572034a9bda05_builder.lock
+2024-04-19 19:26:41,846 [DEBUG] Lock 131507137405808 acquired on /home/yoyo/.cache/huggingface/datasets/json/default-b0856beeb4ee702e/0.0.0/ab573428e7a11a7e23eebd41a2a71665ac3789ce311cbad7049572034a9bda05_builder.lock
+2024-04-19 19:26:41,848 [DEBUG] open file: /home/yoyo/.cache/huggingface/datasets/json/default-b0856beeb4ee702e/0.0.0/ab573428e7a11a7e23eebd41a2a71665ac3789ce311cbad7049572034a9bda05.incomplete/json-train-00000-00000-of-NNNNN.arrow
+2024-04-19 19:26:41,852 [DEBUG] open file: /home/yoyo/.cache/huggingface/datasets/json/default-b0856beeb4ee702e/0.0.0/ab573428e7a11a7e23eebd41a2a71665ac3789ce311cbad7049572034a9bda05.incomplete/json-val-00000-00000-of-NNNNN.arrow
+2024-04-19 19:26:41,854 [DEBUG] open file: /home/yoyo/.cache/huggingface/datasets/json/default-b0856beeb4ee702e/0.0.0/ab573428e7a11a7e23eebd41a2a71665ac3789ce311cbad7049572034a9bda05.incomplete/json-test-00000-00000-of-NNNNN.arrow
+2024-04-19 19:26:41,856 [DEBUG] Attempting to acquire lock 131507120211136 on /home/yoyo/.cache/huggingface/datasets/json/default-b0856beeb4ee702e/0.0.0/ab573428e7a11a7e23eebd41a2a71665ac3789ce311cbad7049572034a9bda05.incomplete_info.lock
+2024-04-19 19:26:41,857 [DEBUG] Lock 131507120211136 acquired on /home/yoyo/.cache/huggingface/datasets/json/default-b0856beeb4ee702e/0.0.0/ab573428e7a11a7e23eebd41a2a71665ac3789ce311cbad7049572034a9bda05.incomplete_info.lock
+2024-04-19 19:26:41,858 [DEBUG] open file: /home/yoyo/.cache/huggingface/datasets/json/default-b0856beeb4ee702e/0.0.0/ab573428e7a11a7e23eebd41a2a71665ac3789ce311cbad7049572034a9bda05.incomplete/dataset_info.json
+2024-04-19 19:26:41,859 [DEBUG] Attempting to release lock 131507120211136 on /home/yoyo/.cache/huggingface/datasets/json/default-b0856beeb4ee702e/0.0.0/ab573428e7a11a7e23eebd41a2a71665ac3789ce311cbad7049572034a9bda05.incomplete_info.lock
+2024-04-19 19:26:41,860 [DEBUG] Lock 131507120211136 released on /home/yoyo/.cache/huggingface/datasets/json/default-b0856beeb4ee702e/0.0.0/ab573428e7a11a7e23eebd41a2a71665ac3789ce311cbad7049572034a9bda05.incomplete_info.lock
+2024-04-19 19:26:41,861 [DEBUG] Attempting to release lock 131507137405808 on /home/yoyo/.cache/huggingface/datasets/json/default-b0856beeb4ee702e/0.0.0/ab573428e7a11a7e23eebd41a2a71665ac3789ce311cbad7049572034a9bda05_builder.lock
+2024-04-19 19:26:41,862 [DEBUG] Lock 131507137405808 released on /home/yoyo/.cache/huggingface/datasets/json/default-b0856beeb4ee702e/0.0.0/ab573428e7a11a7e23eebd41a2a71665ac3789ce311cbad7049572034a9bda05_builder.lock
+2024-04-19 19:26:41,875 [DEBUG] Starting new HTTPS connection (1): s3.amazonaws.com:443
+2024-04-19 19:26:42,206 [DEBUG] https://s3.amazonaws.com:443 "HEAD /datasets.huggingface.co/datasets/datasets/json/json.py HTTP/1.1" 200 0
+2024-04-19 19:26:42,217 [DEBUG] Attempting to acquire lock 131510834125792 on /home/yoyo/.cache/huggingface/datasets/_home_yoyo_.cache_huggingface_datasets_json_default-b0856beeb4ee702e_0.0.0_ab573428e7a11a7e23eebd41a2a71665ac3789ce311cbad7049572034a9bda05.lock
+2024-04-19 19:26:42,221 [DEBUG] Lock 131510834125792 acquired on /home/yoyo/.cache/huggingface/datasets/_home_yoyo_.cache_huggingface_datasets_json_default-b0856beeb4ee702e_0.0.0_ab573428e7a11a7e23eebd41a2a71665ac3789ce311cbad7049572034a9bda05.lock
+2024-04-19 19:26:42,224 [DEBUG] open file: /home/yoyo/.cache/huggingface/datasets/json/default-b0856beeb4ee702e/0.0.0/ab573428e7a11a7e23eebd41a2a71665ac3789ce311cbad7049572034a9bda05/dataset_info.json
+2024-04-19 19:26:42,226 [DEBUG] Attempting to release lock 131510834125792 on /home/yoyo/.cache/huggingface/datasets/_home_yoyo_.cache_huggingface_datasets_json_default-b0856beeb4ee702e_0.0.0_ab573428e7a11a7e23eebd41a2a71665ac3789ce311cbad7049572034a9bda05.lock
+2024-04-19 19:26:42,232 [DEBUG] Lock 131510834125792 released on /home/yoyo/.cache/huggingface/datasets/_home_yoyo_.cache_huggingface_datasets_json_default-b0856beeb4ee702e_0.0.0_ab573428e7a11a7e23eebd41a2a71665ac3789ce311cbad7049572034a9bda05.lock
+2024-04-19 19:26:42,235 [DEBUG] Attempting to acquire lock 131507119782688 on /home/yoyo/.cache/huggingface/datasets/json/default-b0856beeb4ee702e/0.0.0/ab573428e7a11a7e23eebd41a2a71665ac3789ce311cbad7049572034a9bda05_builder.lock
+2024-04-19 19:26:42,236 [DEBUG] Lock 131507119782688 acquired on /home/yoyo/.cache/huggingface/datasets/json/default-b0856beeb4ee702e/0.0.0/ab573428e7a11a7e23eebd41a2a71665ac3789ce311cbad7049572034a9bda05_builder.lock
+2024-04-19 19:26:42,237 [DEBUG] open file: /home/yoyo/.cache/huggingface/datasets/json/default-b0856beeb4ee702e/0.0.0/ab573428e7a11a7e23eebd41a2a71665ac3789ce311cbad7049572034a9bda05/dataset_info.json
+2024-04-19 19:26:42,239 [DEBUG] Attempting to release lock 131507119782688 on /home/yoyo/.cache/huggingface/datasets/json/default-b0856beeb4ee702e/0.0.0/ab573428e7a11a7e23eebd41a2a71665ac3789ce311cbad7049572034a9bda05_builder.lock
+2024-04-19 19:26:42,240 [DEBUG] Lock 131507119782688 released on /home/yoyo/.cache/huggingface/datasets/json/default-b0856beeb4ee702e/0.0.0/ab573428e7a11a7e23eebd41a2a71665ac3789ce311cbad7049572034a9bda05_builder.lock
+2024-04-19 19:26:42,247 [DEBUG] Starting new HTTPS connection (1): s3.amazonaws.com:443
+2024-04-19 19:26:42,757 [DEBUG] https://s3.amazonaws.com:443 "HEAD /datasets.huggingface.co/datasets/datasets/json/json.py HTTP/1.1" 200 0
+2024-04-19 19:26:42,767 [DEBUG] Attempting to acquire lock 131507110838336 on /home/yoyo/.cache/huggingface/datasets/_home_yoyo_.cache_huggingface_datasets_json_default-b0856beeb4ee702e_0.0.0_ab573428e7a11a7e23eebd41a2a71665ac3789ce311cbad7049572034a9bda05.lock
+2024-04-19 19:26:42,771 [DEBUG] Lock 131507110838336 acquired on /home/yoyo/.cache/huggingface/datasets/_home_yoyo_.cache_huggingface_datasets_json_default-b0856beeb4ee702e_0.0.0_ab573428e7a11a7e23eebd41a2a71665ac3789ce311cbad7049572034a9bda05.lock
+2024-04-19 19:26:42,774 [DEBUG] open file: /home/yoyo/.cache/huggingface/datasets/json/default-b0856beeb4ee702e/0.0.0/ab573428e7a11a7e23eebd41a2a71665ac3789ce311cbad7049572034a9bda05/dataset_info.json
+2024-04-19 19:26:42,776 [DEBUG] Attempting to release lock 131507110838336 on /home/yoyo/.cache/huggingface/datasets/_home_yoyo_.cache_huggingface_datasets_json_default-b0856beeb4ee702e_0.0.0_ab573428e7a11a7e23eebd41a2a71665ac3789ce311cbad7049572034a9bda05.lock
+2024-04-19 19:26:42,778 [DEBUG] Lock 131507110838336 released on /home/yoyo/.cache/huggingface/datasets/_home_yoyo_.cache_huggingface_datasets_json_default-b0856beeb4ee702e_0.0.0_ab573428e7a11a7e23eebd41a2a71665ac3789ce311cbad7049572034a9bda05.lock
+2024-04-19 19:26:42,779 [DEBUG] Attempting to acquire lock 131507111092032 on /home/yoyo/.cache/huggingface/datasets/json/default-b0856beeb4ee702e/0.0.0/ab573428e7a11a7e23eebd41a2a71665ac3789ce311cbad7049572034a9bda05_builder.lock
+2024-04-19 19:26:42,780 [DEBUG] Lock 131507111092032 acquired on /home/yoyo/.cache/huggingface/datasets/json/default-b0856beeb4ee702e/0.0.0/ab573428e7a11a7e23eebd41a2a71665ac3789ce311cbad7049572034a9bda05_builder.lock
+2024-04-19 19:26:42,781 [DEBUG] open file: /home/yoyo/.cache/huggingface/datasets/json/default-b0856beeb4ee702e/0.0.0/ab573428e7a11a7e23eebd41a2a71665ac3789ce311cbad7049572034a9bda05/dataset_info.json
+2024-04-19 19:26:42,782 [DEBUG] Attempting to release lock 131507111092032 on /home/yoyo/.cache/huggingface/datasets/json/default-b0856beeb4ee702e/0.0.0/ab573428e7a11a7e23eebd41a2a71665ac3789ce311cbad7049572034a9bda05_builder.lock
+2024-04-19 19:26:42,783 [DEBUG] Lock 131507111092032 released on /home/yoyo/.cache/huggingface/datasets/json/default-b0856beeb4ee702e/0.0.0/ab573428e7a11a7e23eebd41a2a71665ac3789ce311cbad7049572034a9bda05_builder.lock
+2024-04-19 19:26:42,829 [DEBUG] Starting new HTTPS connection (1): huggingface.co:443
+2024-04-19 19:26:43,166 [DEBUG] https://huggingface.co:443 "HEAD /t5-base/resolve/main/config.json HTTP/1.1" 200 0
+2024-04-19 19:26:43,180 [DEBUG] Starting new HTTPS connection (1): huggingface.co:443
+2024-04-19 19:26:43,363 [DEBUG] https://huggingface.co:443 "HEAD /t5-base/resolve/main/pytorch_model.bin HTTP/1.1" 302 0
+2024-04-19 19:28:06,271 [DEBUG] Starting new HTTPS connection (1): huggingface.co:443
+2024-04-19 19:28:06,494 [DEBUG] https://huggingface.co:443 "HEAD /t5-base/resolve/main/tokenizer_config.json HTTP/1.1" 404 0
+2024-04-19 19:28:06,500 [DEBUG] Starting new HTTPS connection (1): huggingface.co:443
+2024-04-19 19:28:06,695 [DEBUG] https://huggingface.co:443 "HEAD /t5-base/resolve/main/config.json HTTP/1.1" 200 0
+2024-04-19 19:28:06,709 [DEBUG] Starting new HTTPS connection (1): huggingface.co:443
+2024-04-19 19:28:06,964 [DEBUG] https://huggingface.co:443 "HEAD /t5-base/resolve/main/tokenizer_config.json HTTP/1.1" 404 0
+2024-04-19 19:28:06,973 [DEBUG] Starting new HTTPS connection (1): huggingface.co:443
+2024-04-19 19:28:07,174 [DEBUG] https://huggingface.co:443 "HEAD /t5-base/resolve/main/spiece.model HTTP/1.1" 200 0
+2024-04-19 19:28:07,182 [DEBUG] Starting new HTTPS connection (1): huggingface.co:443
+2024-04-19 19:28:07,371 [DEBUG] https://huggingface.co:443 "HEAD /t5-base/resolve/main/tokenizer.json HTTP/1.1" 200 0
+2024-04-19 19:28:07,384 [DEBUG] Starting new HTTPS connection (1): huggingface.co:443
+2024-04-19 19:28:07,564 [DEBUG] https://huggingface.co:443 "HEAD /t5-base/resolve/main/added_tokens.json HTTP/1.1" 404 0
+2024-04-19 19:28:07,576 [DEBUG] Starting new HTTPS connection (1): huggingface.co:443
+2024-04-19 19:28:07,768 [DEBUG] https://huggingface.co:443 "HEAD /t5-base/resolve/main/special_tokens_map.json HTTP/1.1" 404 0
+2024-04-19 19:28:07,781 [DEBUG] Starting new HTTPS connection (1): huggingface.co:443
+2024-04-19 19:28:07,959 [DEBUG] https://huggingface.co:443 "HEAD /t5-base/resolve/main/tokenizer_config.json HTTP/1.1" 404 0
+2024-04-19 19:28:07,969 [DEBUG] Starting new HTTPS connection (1): huggingface.co:443
+2024-04-19 19:28:08,154 [DEBUG] https://huggingface.co:443 "HEAD /t5-base/resolve/main/config.json HTTP/1.1" 200 0
+2024-04-19 19:28:08,200 [DEBUG] Starting new HTTPS connection (1): s3.amazonaws.com:443
+2024-04-19 19:28:08,560 [DEBUG] https://s3.amazonaws.com:443 "HEAD /datasets.huggingface.co/datasets/datasets/json/json.py HTTP/1.1" 200 0
+2024-04-19 19:28:08,576 [DEBUG] Attempting to acquire lock 133724570403744 on /home/yoyo/.cache/huggingface/datasets/_home_yoyo_.cache_huggingface_datasets_json_default-b0856beeb4ee702e_0.0.0_ab573428e7a11a7e23eebd41a2a71665ac3789ce311cbad7049572034a9bda05.lock
+2024-04-19 19:28:08,579 [DEBUG] Lock 133724570403744 acquired on /home/yoyo/.cache/huggingface/datasets/_home_yoyo_.cache_huggingface_datasets_json_default-b0856beeb4ee702e_0.0.0_ab573428e7a11a7e23eebd41a2a71665ac3789ce311cbad7049572034a9bda05.lock
+2024-04-19 19:28:08,580 [DEBUG] open file: /home/yoyo/.cache/huggingface/datasets/json/default-b0856beeb4ee702e/0.0.0/ab573428e7a11a7e23eebd41a2a71665ac3789ce311cbad7049572034a9bda05/dataset_info.json
+2024-04-19 19:28:08,582 [DEBUG] Attempting to release lock 133724570403744 on /home/yoyo/.cache/huggingface/datasets/_home_yoyo_.cache_huggingface_datasets_json_default-b0856beeb4ee702e_0.0.0_ab573428e7a11a7e23eebd41a2a71665ac3789ce311cbad7049572034a9bda05.lock
+2024-04-19 19:28:08,583 [DEBUG] Lock 133724570403744 released on /home/yoyo/.cache/huggingface/datasets/_home_yoyo_.cache_huggingface_datasets_json_default-b0856beeb4ee702e_0.0.0_ab573428e7a11a7e23eebd41a2a71665ac3789ce311cbad7049572034a9bda05.lock
+2024-04-19 19:28:08,593 [DEBUG] Attempting to acquire lock 133724552905920 on /home/yoyo/.cache/huggingface/datasets/json/default-b0856beeb4ee702e/0.0.0/ab573428e7a11a7e23eebd41a2a71665ac3789ce311cbad7049572034a9bda05_builder.lock
+2024-04-19 19:28:08,594 [DEBUG] Lock 133724552905920 acquired on /home/yoyo/.cache/huggingface/datasets/json/default-b0856beeb4ee702e/0.0.0/ab573428e7a11a7e23eebd41a2a71665ac3789ce311cbad7049572034a9bda05_builder.lock
+2024-04-19 19:28:08,595 [DEBUG] open file: /home/yoyo/.cache/huggingface/datasets/json/default-b0856beeb4ee702e/0.0.0/ab573428e7a11a7e23eebd41a2a71665ac3789ce311cbad7049572034a9bda05/dataset_info.json
+2024-04-19 19:28:08,596 [DEBUG] Attempting to release lock 133724552905920 on /home/yoyo/.cache/huggingface/datasets/json/default-b0856beeb4ee702e/0.0.0/ab573428e7a11a7e23eebd41a2a71665ac3789ce311cbad7049572034a9bda05_builder.lock
+2024-04-19 19:28:08,597 [DEBUG] Lock 133724552905920 released on /home/yoyo/.cache/huggingface/datasets/json/default-b0856beeb4ee702e/0.0.0/ab573428e7a11a7e23eebd41a2a71665ac3789ce311cbad7049572034a9bda05_builder.lock
+2024-04-19 19:28:08,608 [DEBUG] Starting new HTTPS connection (1): s3.amazonaws.com:443
+2024-04-19 19:28:09,000 [DEBUG] https://s3.amazonaws.com:443 "HEAD /datasets.huggingface.co/datasets/datasets/json/json.py HTTP/1.1" 200 0
+2024-04-19 19:28:09,021 [DEBUG] Attempting to acquire lock 133724570230544 on /home/yoyo/.cache/huggingface/datasets/_home_yoyo_.cache_huggingface_datasets_json_default-b0856beeb4ee702e_0.0.0_ab573428e7a11a7e23eebd41a2a71665ac3789ce311cbad7049572034a9bda05.lock
+2024-04-19 19:28:09,030 [DEBUG] Lock 133724570230544 acquired on /home/yoyo/.cache/huggingface/datasets/_home_yoyo_.cache_huggingface_datasets_json_default-b0856beeb4ee702e_0.0.0_ab573428e7a11a7e23eebd41a2a71665ac3789ce311cbad7049572034a9bda05.lock
+2024-04-19 19:28:09,034 [DEBUG] open file: /home/yoyo/.cache/huggingface/datasets/json/default-b0856beeb4ee702e/0.0.0/ab573428e7a11a7e23eebd41a2a71665ac3789ce311cbad7049572034a9bda05/dataset_info.json
+2024-04-19 19:28:09,040 [DEBUG] Attempting to release lock 133724570230544 on /home/yoyo/.cache/huggingface/datasets/_home_yoyo_.cache_huggingface_datasets_json_default-b0856beeb4ee702e_0.0.0_ab573428e7a11a7e23eebd41a2a71665ac3789ce311cbad7049572034a9bda05.lock
+2024-04-19 19:28:09,047 [DEBUG] Lock 133724570230544 released on /home/yoyo/.cache/huggingface/datasets/_home_yoyo_.cache_huggingface_datasets_json_default-b0856beeb4ee702e_0.0.0_ab573428e7a11a7e23eebd41a2a71665ac3789ce311cbad7049572034a9bda05.lock
+2024-04-19 19:28:09,056 [DEBUG] Attempting to acquire lock 133724552630224 on /home/yoyo/.cache/huggingface/datasets/json/default-b0856beeb4ee702e/0.0.0/ab573428e7a11a7e23eebd41a2a71665ac3789ce311cbad7049572034a9bda05_builder.lock
+2024-04-19 19:28:09,060 [DEBUG] Lock 133724552630224 acquired on /home/yoyo/.cache/huggingface/datasets/json/default-b0856beeb4ee702e/0.0.0/ab573428e7a11a7e23eebd41a2a71665ac3789ce311cbad7049572034a9bda05_builder.lock
+2024-04-19 19:28:09,062 [DEBUG] open file: /home/yoyo/.cache/huggingface/datasets/json/default-b0856beeb4ee702e/0.0.0/ab573428e7a11a7e23eebd41a2a71665ac3789ce311cbad7049572034a9bda05/dataset_info.json
+2024-04-19 19:28:09,064 [DEBUG] Attempting to release lock 133724552630224 on /home/yoyo/.cache/huggingface/datasets/json/default-b0856beeb4ee702e/0.0.0/ab573428e7a11a7e23eebd41a2a71665ac3789ce311cbad7049572034a9bda05_builder.lock
+2024-04-19 19:28:09,066 [DEBUG] Lock 133724552630224 released on /home/yoyo/.cache/huggingface/datasets/json/default-b0856beeb4ee702e/0.0.0/ab573428e7a11a7e23eebd41a2a71665ac3789ce311cbad7049572034a9bda05_builder.lock
+2024-04-19 19:28:09,076 [DEBUG] Starting new HTTPS connection (1): s3.amazonaws.com:443
+2024-04-19 19:28:09,490 [DEBUG] https://s3.amazonaws.com:443 "HEAD /datasets.huggingface.co/datasets/datasets/json/json.py HTTP/1.1" 200 0
+2024-04-19 19:28:09,502 [DEBUG] Attempting to acquire lock 133724552047776 on /home/yoyo/.cache/huggingface/datasets/_home_yoyo_.cache_huggingface_datasets_json_default-b0856beeb4ee702e_0.0.0_ab573428e7a11a7e23eebd41a2a71665ac3789ce311cbad7049572034a9bda05.lock
+2024-04-19 19:28:09,506 [DEBUG] Lock 133724552047776 acquired on /home/yoyo/.cache/huggingface/datasets/_home_yoyo_.cache_huggingface_datasets_json_default-b0856beeb4ee702e_0.0.0_ab573428e7a11a7e23eebd41a2a71665ac3789ce311cbad7049572034a9bda05.lock
+2024-04-19 19:28:09,508 [DEBUG] open file: /home/yoyo/.cache/huggingface/datasets/json/default-b0856beeb4ee702e/0.0.0/ab573428e7a11a7e23eebd41a2a71665ac3789ce311cbad7049572034a9bda05/dataset_info.json
+2024-04-19 19:28:09,510 [DEBUG] Attempting to release lock 133724552047776 on /home/yoyo/.cache/huggingface/datasets/_home_yoyo_.cache_huggingface_datasets_json_default-b0856beeb4ee702e_0.0.0_ab573428e7a11a7e23eebd41a2a71665ac3789ce311cbad7049572034a9bda05.lock
+2024-04-19 19:28:09,512 [DEBUG] Lock 133724552047776 released on /home/yoyo/.cache/huggingface/datasets/_home_yoyo_.cache_huggingface_datasets_json_default-b0856beeb4ee702e_0.0.0_ab573428e7a11a7e23eebd41a2a71665ac3789ce311cbad7049572034a9bda05.lock
+2024-04-19 19:28:09,514 [DEBUG] Attempting to acquire lock 133724552769792 on /home/yoyo/.cache/huggingface/datasets/json/default-b0856beeb4ee702e/0.0.0/ab573428e7a11a7e23eebd41a2a71665ac3789ce311cbad7049572034a9bda05_builder.lock
+2024-04-19 19:28:09,515 [DEBUG] Lock 133724552769792 acquired on /home/yoyo/.cache/huggingface/datasets/json/default-b0856beeb4ee702e/0.0.0/ab573428e7a11a7e23eebd41a2a71665ac3789ce311cbad7049572034a9bda05_builder.lock
+2024-04-19 19:28:09,516 [DEBUG] open file: /home/yoyo/.cache/huggingface/datasets/json/default-b0856beeb4ee702e/0.0.0/ab573428e7a11a7e23eebd41a2a71665ac3789ce311cbad7049572034a9bda05/dataset_info.json
+2024-04-19 19:28:09,517 [DEBUG] Attempting to release lock 133724552769792 on /home/yoyo/.cache/huggingface/datasets/json/default-b0856beeb4ee702e/0.0.0/ab573428e7a11a7e23eebd41a2a71665ac3789ce311cbad7049572034a9bda05_builder.lock
+2024-04-19 19:28:09,518 [DEBUG] Lock 133724552769792 released on /home/yoyo/.cache/huggingface/datasets/json/default-b0856beeb4ee702e/0.0.0/ab573428e7a11a7e23eebd41a2a71665ac3789ce311cbad7049572034a9bda05_builder.lock
+2024-04-19 19:28:09,554 [DEBUG] Starting new HTTPS connection (1): huggingface.co:443
+2024-04-19 19:28:10,001 [DEBUG] https://huggingface.co:443 "HEAD /t5-base/resolve/main/config.json HTTP/1.1" 200 0
+2024-04-19 19:28:10,029 [DEBUG] Starting new HTTPS connection (1): huggingface.co:443
+2024-04-19 19:28:10,254 [DEBUG] https://huggingface.co:443 "HEAD /t5-base/resolve/main/pytorch_model.bin HTTP/1.1" 302 0
