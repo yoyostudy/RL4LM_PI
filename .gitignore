@@ -109,6 +109,7 @@ venv/
 ENV/
 env.bak/
 venv.bak/
+duvenv/
 
 # Spyder project settings
 .spyderproject
@@ -138,3 +139,8 @@ cluster_utils/
 
 ## experiment
 rl4lm_exps/
+
+## mymodel
+pre_trained/
+ProtectAI/
+pi_detector/

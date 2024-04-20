@@ -57,6 +57,7 @@ from rl4lms.envs.text_generation.policy.seq2seq_policy import (
 )
 from rl4lms.envs.text_generation.post_processors import three_sentence_summary
 from rl4lms.envs.text_generation.reward import (
+    PIReward, # my custom reward
     TER,
     BatchedCommonGenPenaltyShapingFunction,
     BERTScoreRewardFunction,
@@ -116,6 +117,7 @@ class DataPoolRegistry:
 
 class RewardFunctionRegistry:
     _registry = {
+        "pi_reward": PIReward, # my custom reward
         "increasing_numbers": RewardIncreasingNumbers,
         "sentences_with_dates": RewardSentencesWithDates,
         "learned_reward": LearnedBatchedRewardFunction,

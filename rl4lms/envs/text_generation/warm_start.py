@@ -103,6 +103,7 @@ class TrainerWarmStartMixin:
 
         sorted_ckpts = sorted(checkpoints, reverse=True,
                               key=lambda ckpt: int(ckpt.split("_")[1]))
+        
         recent_ckpt = sorted_ckpts[0]
         recent_ckpt_id = int(recent_ckpt.split("_")[1])
 
@@ -113,6 +114,10 @@ class TrainerWarmStartMixin:
     def load_trainer_state(self, tracker: Tracker):
         recent_ckpt_path, _ = self._get_recent_ckpt_path(tracker)
         state_dict = None
+        
+        # MODIFY HERE
+        # recent_ckpt_path = None
+        
         try:
             if recent_ckpt_path is not None:
                 state_dict = torch.load(
@@ -122,6 +127,9 @@ class TrainerWarmStartMixin:
                 self._alg_state_dict = state_dict["alg_state"]
                 self._trainer_state = state_dict["trainer_state"]
 
+                # MODIFIED HERE FOR DEBUG
+                print('---------------------------------------')
+                print('loaded the current trainer state from:', self._trainer_state)
                 tracker.log_info(
                     f"Loaded the current trainer state from: {self._trainer_state}")
             else:

@@ -3,7 +3,7 @@ from abc import ABC, abstractclassmethod
 import torch
 from datasets import load_metric
 from rl4lms.envs.text_generation.observation import Observation
-from transformers import AutoModelForSequenceClassification, AutoTokenizer
+from transformers import AutoModelForSequenceClassification, AutoTokenizer, TextClassificationPipeline
 from rl4lms.envs.text_generation.metric import (
     CIDERMetric,
     MeteorMetric,
@@ -63,6 +63,39 @@ class BatchedRewardFunction(ABC):
         An abstract class for batched reward functions for text generation
         """
         raise NotImplementedError
+
+
+
+###  My Custom Reward ############
+class PIReward(RewardFunction):
+    def __init__(self, enable_local_model, local_model_name, model_name, tokenizer_name) -> None:
+        super().__init__()
+        if enable_local_model:
+            self._model = AutoModelForSequenceClassification.from_pretrained(local_model_name)
+            self._tokenizer = AutoTokenizer.from_pretrained(local_model_name)
+
+        else:
+            self._model = AutoModelForSequenceClassification.from_pretrained("ProtectAI/deberta-v3-base-prompt-injection")
+            self._tokenizer = AutoTokenizer.from_pretrained("ProtectAI/deberta-v3-base-prompt-injection")
+        
+        self._classifier = TextClassificationPipeline(
+                model=self._model,
+                tokenizer=self._tokenizer,
+            )
+
+    def __call__(self, prev_observation: Observation,
+                    action: int,
+                    current_observation: Observation,
+                    done: bool,
+                    meta_info: Dict[str, Any] = None) -> float:
+        if done:
+            text = current_observation.context_text
+            if self._classifier(text)[0]['label'] == 'SAFE':
+                reward = 0
+            else:
+                reward = 1
+            return reward
+        return 0
 
 
 ### Automated reward functions ###########################

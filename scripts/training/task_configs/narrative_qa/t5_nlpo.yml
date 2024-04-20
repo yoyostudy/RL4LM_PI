@@ -7,7 +7,7 @@ tokenizer:
 reward_fn:
   id: rouge_l_max
   args:
-    max_n: 4
+    max_n: 2 #4
     limit_length: True
     length_limit: 100
     length_limit_type: "words"
@@ -38,7 +38,7 @@ datapool:
 env:
   n_envs: 10
   args:
-    max_prompt_length: 512
+    max_prompt_length: 10 #512
     max_episode_length: 50
     terminate_on_eos: True
     context_start_token: 0
@@ -48,7 +48,7 @@ alg:
   id: nlpo
   args:
     n_steps: 256
-    batch_size: 64
+    batch_size: 2 #64
     verbose: 1
     learning_rate: 0.000002
     n_epochs: 5
@@ -68,7 +68,7 @@ alg:
         top_k: 50
 
 train_evaluation:
-  eval_batch_size: 50
+  eval_batch_size: 2 #50
   n_iters: 100
   eval_every: 10
   save_every: 1
