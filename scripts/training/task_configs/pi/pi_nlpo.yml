@@ -40,7 +40,7 @@ alg:
   policy:
     id: maskable_seq2seq_lm_actor_critic_policy
     args:
-      model_name: gpt2 #t5-base
+      model_name: t5-base
       apply_model_parallel: False # True
       mask_type: "learned_top_p"
       top_mask: 0.1 #0.9
