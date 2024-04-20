@@ -136,5 +136,5 @@ cluster_utils/
 **/wandb/
 
 
-## checkpoints
-checkpoints/
+## experiment
+rl4lm_exps/
