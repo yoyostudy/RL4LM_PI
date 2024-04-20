@@ -8,6 +8,7 @@ from rl4lms.algorithms.nlpo import NLPO
 from rl4lms.algorithms.ppo.ppo import PPO
 from rl4lms.algorithms.trpo import TRPO
 from rl4lms.data_pools.custom_text_generation_pools import (
+    PIGen, # my custom dataset
     IMDB,
     WMT,
     CNNDailyMail,
@@ -86,6 +87,7 @@ from rl4lms.envs.text_generation.test_reward import (
 
 class DataPoolRegistry:
     _registry = {
+        "pi_gen": PIGen, # my custom dataset
         "dummy_pool": TestTextGenPool,
         "imdb": IMDB,
         "commongen": CommonGen,

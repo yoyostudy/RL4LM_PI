@@ -134,3 +134,7 @@ dmypy.json
 .idea/
 cluster_utils/
 **/wandb/
+
+
+## checkpoints
+checkpoints/
