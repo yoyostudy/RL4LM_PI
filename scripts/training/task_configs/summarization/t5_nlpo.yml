@@ -13,10 +13,10 @@ datapool:
     prompt_prefix: "Summarize: "
 
 env:
-  n_envs: 10
+  n_envs: 2 #10
   args:
-    max_prompt_length: 512
-    max_episode_length: 100
+    max_prompt_length: 128 #512
+    max_episode_length: 10 #100
     terminate_on_eos: True
     prompt_truncation_side: "right"
     context_start_token: 0
@@ -24,8 +24,8 @@ env:
 alg:
   id: nlpo
   args:
-    n_steps: 512
-    batch_size: 64
+    n_steps: 2 # 512
+    batch_size: 2 #64
     verbose: 1
     learning_rate: 0.000002
     n_epochs: 5
@@ -37,7 +37,7 @@ alg:
     id: maskable_seq2seq_lm_actor_critic_policy
     args:
       model_name: t5-base
-      apply_model_parallel: True
+      apply_model_parallel: False #True
       prompt_truncation_side: "right"
       min_tokens_to_keep: 100
       top_mask: 0.9
@@ -45,13 +45,13 @@ alg:
       target_update_iterations: 20
       generation_kwargs:
         do_sample: True
-        top_k: 100
-        min_length: 50
-        max_new_tokens: 100
+        top_k: 2 #100
+        min_length: 2 #50
+        max_new_tokens: 2 #100
 
 train_evaluation:
-  eval_batch_size: 100
-  n_iters: 100
+  eval_batch_size: 2 #100
+  n_iters: 2 #100
   eval_every: 10
   save_every: 1
   metrics:
@@ -80,5 +80,5 @@ train_evaluation:
     do_sample: True
     top_k: 0
     temperature: 0.7
-    min_length: 50
-    max_new_tokens: 100
+    min_length: 2 #50
+    max_new_tokens: 2 #100
