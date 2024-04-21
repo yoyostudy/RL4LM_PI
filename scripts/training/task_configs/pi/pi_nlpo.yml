@@ -1,5 +1,5 @@
 tokenizer:
-  model_name: pre_trained/pi_sft_ckp #t5-base
+  model_name: pre_trained/pi_sft_t5 
   padding_side: left
   truncation_side: left
   pad_token_as_eos_token: False
@@ -7,10 +7,9 @@ tokenizer:
 reward_fn:
   id: pi_reward
   args:
-    enable_local_model: True
-    local_model_name: pre_trained/pi_reward_model
-    model_name: "ProtectAI/deberta-v3-base-prompt-injection"
-    tokenizer_name: "ProtectAI/deberta-v3-base-prompt-injection"
+    model_name: pre_trained/pi_reward_model
+    tokenizer_name: pre_trained/pi_reward_model
+
 
 datapool:
   id: pi_gen
@@ -40,7 +39,7 @@ alg:
   policy:
     id: maskable_seq2seq_lm_actor_critic_policy
     args:
-      model_name: pre_trained/pi_sft_ckp
+      model_name: pre_trained/pi_sft_t5
       apply_model_parallel: False # True
       mask_type: "learned_top_p"
       top_mask: 0.1 #0.9
@@ -52,8 +51,8 @@ alg:
 train_evaluation:
   eval_batch_size: 2
   n_iters: 1 #100
-  eval_every: 5
-  save_every: 10
+  eval_every: 1
+  save_every: 1
   metrics:
       - id: meteor
         args: {}

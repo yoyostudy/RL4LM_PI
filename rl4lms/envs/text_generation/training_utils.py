@@ -41,6 +41,8 @@ def build_tokenizer(tokenizer_config: Dict[str, Any]):
     tokenizer.truncation_side = tokenizer_config.get(
         "truncation_side", "left")
     ## TODO: modify here
+    print(tokenizer_config.get('name_or_path'))
+    ## TODO: make sure the tokenizer's name or path contain t5
     tokenizer.name_or_path = tokenizer_config.get("name_or_path", tokenizer_config["model_name"])
     return tokenizer
 

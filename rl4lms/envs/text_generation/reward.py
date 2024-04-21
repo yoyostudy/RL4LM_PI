@@ -68,16 +68,10 @@ class BatchedRewardFunction(ABC):
 
 ###  My Custom Reward ############
 class PIReward(RewardFunction):
-    def __init__(self, enable_local_model, local_model_name, model_name, tokenizer_name) -> None:
+    def __init__(self, model_name, tokenizer_name) -> None:
         super().__init__()
-        if enable_local_model:
-            self._model = AutoModelForSequenceClassification.from_pretrained(local_model_name)
-            self._tokenizer = AutoTokenizer.from_pretrained(local_model_name)
-
-        else:
-            self._model = AutoModelForSequenceClassification.from_pretrained("ProtectAI/deberta-v3-base-prompt-injection")
-            self._tokenizer = AutoTokenizer.from_pretrained("ProtectAI/deberta-v3-base-prompt-injection")
-        
+        self._model = AutoModelForSequenceClassification.from_pretrained(model_name)
+        self._tokenizer = AutoTokenizer.from_pretrained(tokenizer_name)
         self._classifier = TextClassificationPipeline(
                 model=self._model,
                 tokenizer=self._tokenizer,
@@ -99,8 +93,6 @@ class PIReward(RewardFunction):
 
 
 ### Automated reward functions ###########################
-
-
 class CommonGenPenaltyShapingFunction(RewardFunction):
     def __call__(
         self,
