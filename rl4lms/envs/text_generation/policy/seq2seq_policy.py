@@ -419,6 +419,9 @@ class MaskedSeq2SeqLMActorCriticPolicy(
         action_masks: torch.Tensor = None,
         past_model_kwargs: Optional[Dict[str, torch.tensor]] = None,
     ) -> PolicyOutput:
+        
+        # MODIFIED
+        action_masks = action_masks.to(dtype=torch.float32)
 
         # Temp workaround for Seq2seq policy
         past_model_kwargs = None
@@ -455,6 +458,8 @@ class MaskedSeq2SeqLMActorCriticPolicy(
             input_ids, **past_model_kwargs
         )
         # and forward pass to get next token logits
+        ## DEBUG HERE: outputs return Nan
+
         outputs = self._policy_model(
             **model_inputs, decoder_attention_mask=decoder_attn_mask, return_dict=True
         )
@@ -496,8 +501,11 @@ class MaskedSeq2SeqLMActorCriticPolicy(
         self, obs: torch.Tensor, actions: torch.Tensor, action_masks: torch.Tensor
     ) -> EvaluateActionsOutput:
 
+        # MODIFIED: 
+        action_masks = action_masks.to(dtype=torch.float32)
+
         policy_outputs = self.forward_policy(
-            obs=obs, actions=actions, action_masks=action_masks
+            obs=obs, actions=actions, action_masks=action_masks.to(dtype=torch.float32)
         )
         value_outputs = self.forward_value(obs)
 
@@ -511,7 +519,7 @@ class MaskedSeq2SeqLMActorCriticPolicy(
     def _get_action_masks(self, model_inputs, decoder_attn_mask) -> torch.tensor:
         action_masks = torch.zeros((decoder_attn_mask.size(0), self.action_space.n)).to(
             self.device
-        )
+        ).to(dtype=torch.float32) # MODIFIED: MAKE SURE IT IS torch.float32
         outputs = self._mask_model(
             **model_inputs, decoder_attention_mask=decoder_attn_mask, return_dict=True
         )

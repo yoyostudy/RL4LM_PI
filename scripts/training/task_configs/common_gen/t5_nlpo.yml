@@ -13,8 +13,8 @@ reward_fn:
 datapool:
   id: commongen
   args:
-    concept_end_token: '.'
-    concept_separator_token: ' '
+    concept_end_token: '<END>'
+    concept_separator_token: '<SEP>'
     prefix: "generate a sentence with: "
 
 env:
@@ -33,6 +33,7 @@ alg:
     verbose: 1
     learning_rate: 0.000002
     n_epochs: 5
+    clip_range: 0.2
   kl_div:
     coeff: 0.001
     target_kl: 2.0
@@ -49,6 +50,7 @@ alg:
         top_k: 50
         min_length: 10
         max_new_tokens: 20
+  fp16: True ## MODIFY HERE: IS THIS PLACE RIGHT? FOR t5-based bug
 
 train_evaluation:
   eval_batch_size: 100

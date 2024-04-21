@@ -26,24 +26,22 @@ env:
     terminate_on_eos: True
 
 alg:
-  id: nlpo
+  id: ppo
   args:
-    n_steps: 1 #256
-    batch_size: 1 #64
+    n_steps: 2 #256
+    batch_size: 2 #64
     verbose: 1
     learning_rate: 0.000002
     n_epochs: 1 #5
+    clip_range: 0.2 #WHY NOT INCLUDE ? 
   kl_div:
     coeff: 0.001
     target_kl: 1.0
   policy:
-    id: maskable_seq2seq_lm_actor_critic_policy
+    id: seq2seq_lm_actor_critic_policy
     args:
       model_name: pre_trained/pi_sft_t5
       apply_model_parallel: False # True
-      mask_type: "learned_top_p"
-      top_mask: 0.1 #0.9
-      target_update_iterations: 1 #20
       generation_kwargs:
         do_sample: True
         top_k: 1 #5 #10 #50
