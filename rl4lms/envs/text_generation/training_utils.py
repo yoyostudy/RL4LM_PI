@@ -194,8 +194,12 @@ class OnPolicyTrainer(TrainerWarmStartMixin):
     def train_and_eval(self):
         # evaluate on val and test set before fine-tuning once
         iter_start = self._trainer_state["current_iter"]
+        print('start eval')
         self._evaluate_on_datapools(epoch=iter_start)
+        print('end eval')
 
+
+        print('start train')
         # train for given number of iters
         for epoch in range(iter_start, self._n_iters):
             # current state
@@ -212,6 +216,8 @@ class OnPolicyTrainer(TrainerWarmStartMixin):
             # evaluate on val set in the given intervals
             if (epoch + 1) % self._train_eval_config["eval_every"] == 0:
                 self._evaluate_on_datapools(epoch=epoch, splits=["val"])
+
+        print('end train')
 
         # finally evaluate on val and test samples
         self._evaluate_on_datapools(epoch=epoch)
