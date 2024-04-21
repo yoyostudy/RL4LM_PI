@@ -7,8 +7,6 @@ from rl4lms.envs.text_generation.logging_utils import Tracker
 from rl4lms.envs.text_generation.policy.base_policy import LMActorCriticPolicy
 
 ################## Policy Warm Start Mixins#######################################
-
-
 class ActorOnlyWarmStartMixin:
     def get_state_dict(self) -> Dict[str, Any]:
         state_dict = {
@@ -98,11 +96,18 @@ class TrainerWarmStartMixin:
             os.makedirs(tracker.checkpoint_base_path)
             checkpoints = os.listdir(tracker.checkpoint_base_path)
 
+        
+        # TODO: MODIFY HERE 
+        checkpoints = []
+
         if len(checkpoints) == 0:
             return None, None
+        
 
+        print(checkpoints)
         sorted_ckpts = sorted(checkpoints, reverse=True,
                               key=lambda ckpt: int(ckpt.split("_")[1]))
+        print(sorted_ckpts)
         
         recent_ckpt = sorted_ckpts[0]
         recent_ckpt_id = int(recent_ckpt.split("_")[1])
@@ -115,8 +120,9 @@ class TrainerWarmStartMixin:
         recent_ckpt_path, _ = self._get_recent_ckpt_path(tracker)
         state_dict = None
         
-        # MODIFY HERE
+        # TODO: MODIFY HERE IF YOU DO NOT WANT TO CONTINUE TRAINING FROM A CHECKPOINT
         # recent_ckpt_path = None
+        print(recent_ckpt_path)
         
         try:
             if recent_ckpt_path is not None:
@@ -127,7 +133,7 @@ class TrainerWarmStartMixin:
                 self._alg_state_dict = state_dict["alg_state"]
                 self._trainer_state = state_dict["trainer_state"]
 
-                # MODIFIED HERE FOR DEBUG
+                # DEBUG:MODIFIED HERE FOR DEBUG
                 print('---------------------------------------')
                 print('loaded the current trainer state from:', self._trainer_state)
                 tracker.log_info(

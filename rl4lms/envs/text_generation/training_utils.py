@@ -40,6 +40,8 @@ def build_tokenizer(tokenizer_config: Dict[str, Any]):
         "padding_side", "left")
     tokenizer.truncation_side = tokenizer_config.get(
         "truncation_side", "left")
+    ## TODO: modify here
+    tokenizer.name_or_path = tokenizer_config.get("name_or_path", tokenizer_config["model_name"])
     return tokenizer
 
 
