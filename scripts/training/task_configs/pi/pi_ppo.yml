@@ -21,18 +21,18 @@ datapool:
 env:
   n_envs: 2
   args:
-    max_prompt_length: 1 # #128
-    max_episode_length: 1 #20
+    max_prompt_length: 128 # #128
+    max_episode_length: 20 #20
     terminate_on_eos: True
 
 alg:
   id: ppo
   args:
-    n_steps: 2 #256
-    batch_size: 2 #64
+    n_steps: 64 #256
+    batch_size: 8 #64
     verbose: 1
     learning_rate: 0.000002
-    n_epochs: 1 #5
+    n_epochs: 5 #5
     clip_range: 0.2 #WHY NOT INCLUDE ? 
   kl_div:
     coeff: 0.001
@@ -44,11 +44,11 @@ alg:
       apply_model_parallel: False # True
       generation_kwargs:
         do_sample: True
-        top_k: 1 #5 #10 #50
+        top_k: 10 #5 #10 #50
 
 train_evaluation:
   eval_batch_size: 2
-  n_iters: 1 #100
+  n_iters: 10 #100
   eval_every: 1
   save_every: 1
   metrics:
@@ -73,6 +73,6 @@ train_evaluation:
         args: {}
   generation_kwargs:
     do_sample: True
-    top_k: 1 #20
+    top_k: 5 #20
     min_length: 1
-    max_new_tokens: 2 #20
+    max_new_tokens: 50 #20

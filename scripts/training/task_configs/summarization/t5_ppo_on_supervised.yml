@@ -12,7 +12,6 @@ datapool:
   args:
     prompt_prefix: "Summarize: "
 
-
 env:
   n_envs: 10
   args:
