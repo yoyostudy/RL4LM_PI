@@ -23,6 +23,7 @@ from transformers import (AutoTokenizer,
                           TrainingArguments,
                           DataCollatorForLanguageModeling,
                           DataCollatorForSeq2Seq)
+from rl4lms.envs.text_generation.model import CustomCausalLMWithClassificationHead, CustomSeq2SeqLMWithClassificationHead
 from rl4lms.envs.text_generation.utils_supervised import (get_datasets_for_causal,
                                                            get_datasets_for_seq2seq,
                                                            tokenize_causal,
@@ -271,6 +272,8 @@ class SupervisedTrainer:
         self._metrics_config_dict = self._train_eval_config.get("metrics")
         self._samples_by_split = build_datapool(
             self._datapool_config)
+        
+        ## TODO: get train data for decision making and generation
         self._train_dataset = get_datasets_for_causal(
             self._samples_by_split["train"]) if self._alg_config[
             "model_type"] == "causal" else get_datasets_for_seq2seq(self._samples_by_split["train"])
@@ -280,8 +283,12 @@ class SupervisedTrainer:
         self._tokenized_dataset = self._train_dataset.map(
             preprocess_fn, batched=True,
             remove_columns=self._train_dataset.column_names)
-        model_cls = AutoModelForCausalLM if self._alg_config[
-            "model_type"] == "causal" else AutoModelForSeq2SeqLM
+        # model_cls = AutoModelForCausalLM if self._alg_config[
+        #     "model_type"] == "causal" else AutoModelForSeq2SeqLM
+        # Update model initialization
+        model_cls = CustomCausalLMWithClassificationHead if self._alg_config[
+            "model_type"] == "causal" else CustomSeq2SeqLMWithClassificationHead
+        
         self._gen_kwargs = self._alg_config["generation_kwargs"]
         self._model = model_cls.from_pretrained(self._alg_config["model_name"])
         self._model.parallelize()

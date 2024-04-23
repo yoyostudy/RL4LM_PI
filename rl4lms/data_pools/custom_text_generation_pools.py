@@ -11,6 +11,46 @@ from collections import defaultdict
 import zipfile
 import json
 
+class PI(TextGenPool):
+    @classmethod
+    def prepare(cls, split: str , prefix: str, concept_end_token: str, concept_separator_token: str, data_folder_path: str) -> 'TextGenPool':
+        dataset = load_dataset("json", data_files={
+            "train": os.path.join(data_folder_path, "pi_all_train.json"),
+            "val": os.path.join(data_folder_path, "pi_all_val.json"),
+            "test": os.path.join(data_folder_path, "pi_all_test.json"),
+        })
+        dataset_split = dataset[split]
+        samples = []
+        for ix, item in enumerate(dataset_split):
+            # get the decision: 
+            if item['is_prompt_extraction'] is True:
+                # the decision should be to perform attempt 
+                decision = 1
+            else:
+                decision = 0
+
+            input_text = "Now you chose to " 
+            if decision == 0:
+                input_text += "CONTINUE ATTACK " + "Based on those payload:" + item['payloads']
+                ref_text = item['attack']
+            else:
+                input_text += "PERFORM ATTEMPT " + "Based on the response:" + item['llm_output'] 
+                ref_text = item['access_code']
+            
+            sample = Sample(id=f"{split}_{ix}",
+                            prompt_or_input_text= prefix + concept_separator_token + input_text + concept_end_token,
+                            references=[decision, ref_text],
+                            meta_data= {
+                                "pre_defense": item['pre_prompt'],
+                                "post_defense": item['post_prompt'],
+                                "access_code": item['access_code'],
+                            }
+                            )
+            samples.append(sample)
+        pool_instance = cls(samples)
+        return pool_instance
+            
+
 
 class PIGen(TextGenPool):
     @classmethod
