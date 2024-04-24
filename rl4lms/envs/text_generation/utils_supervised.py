@@ -272,6 +272,10 @@ def generate_on_samples(model: PreTrainedModel,
     all_ref_texts = []
     all_prompt_texts = []
     all_meta_infos = []
+    # TODO: add decision labels, add gerated decision
+    all_ref_decisions = []
+    all_generated_decisions = []
+    
     for batch in tqdm(list(get_batch(samples, batch_size)), desc="Predicting"):
         batch_generated_texts = generate_text(
             model, tokenizer, batch, max_prompt_length, generation_kwargs)
@@ -281,12 +285,19 @@ def generate_on_samples(model: PreTrainedModel,
             batch_generated_texts = [post_processing_fn(
                 text) for text in batch_generated_texts]
 
-        batch_ref_texts = [sample.references for sample in batch]
+        batch_ref_texts = [sample.references[1] for sample in batch] # MODIFIED
+        batch_ref_decision = [sample.references[0] for sample in batch] # ADD
         batch_prompt_texts = [sample.prompt_or_input_text for sample in batch]
         batch_meta_infos = [sample.meta_data for sample in batch]
+
+
         all_generated_texts.extend(batch_generated_texts)
         all_ref_texts.extend(batch_ref_texts)
         all_prompt_texts.extend(batch_prompt_texts)
         all_meta_infos.extend(batch_meta_infos)
+        all_ref_decisions.extend(batch_ref_decision) # ADD
+        
+
+
 
     return all_prompt_texts, all_generated_texts, all_ref_texts, all_meta_infos

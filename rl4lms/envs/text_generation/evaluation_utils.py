@@ -36,18 +36,28 @@ def evaluate_on_samples(
     all_ref_texts = []
     all_prompt_texts = []
     all_meta_infos = []
+
+    # TODO: add all_ref_decision
+    all_ref_decision = []
+
     n_samples = len(samples)
     for batch in tqdm(list(get_batch(samples, batch_size)), desc="Evaluating"):
         batch_generated_texts = generate_text(
             policy, tokenizer, batch, max_prompt_length, dt_control_token, gen_kwargs
         )
-        batch_ref_texts = [sample.references for sample in batch]
+        # TODO: ADD batch_ref_decision, MODIFY batch_ref_texts
+        batch_ref_decision = [sample.references[0] for sample in batch]
+        batch_ref_texts = [sample.references[1] for sample in batch]
+        
         batch_prompt_texts = [sample.prompt_or_input_text for sample in batch]
         batch_meta_infos = [sample.meta_data for sample in batch]
         all_generated_texts.extend(batch_generated_texts)
         all_ref_texts.extend(batch_ref_texts)
         all_prompt_texts.extend(batch_prompt_texts)
         all_meta_infos.extend(batch_meta_infos)
+
+        # TODO: ADD all_ref_decision
+        all_ref_decision.extend(batch_ref_decision)
 
     # compute metrics
     corpus_level_metrics = {}
