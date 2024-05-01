@@ -15,14 +15,9 @@ Paper Link: https://arxiv.org/abs/2210.01241
 Website Link: https://rl4lms.apps.allenai.org/
 
 Thoroughly **tested** and **benchmarked** with over **2000 experiments** :fire: (GRUE benchmark :trophy:) on a comprehensive set of: 
-- 7 different Natural Language Processing (NLP) Tasks:
-    - Summarization
-    - Generative Commonsense Reasoning
-    - IMDB Sentiment-based Text Continuation
-    - Table-to-text generation
-    - Abstractive Question Answering
-    - Machine Translation
-    - Dialogue Generation
+- Two new different Natural Language Processing (NLP) Tasks for prompt injection:
+    - Password Guessor
+    - Prompt Injection Generation
 - Different types of NLG metrics (20+) which can be used as reward functions:
     - Lexical Metrics (eg: ROUGE, BLEU, SacreBLEU, METEOR)
     - Semantic Metrics (eg: BERTSCORE, BLEURT)
@@ -33,18 +28,6 @@ Thoroughly **tested** and **benchmarked** with over **2000 experiments** :fire: 
 
 All of these building blocks can be customizable allowing users to train transformer-based LMs to optimize any arbitrary reward function on any dataset of their choice.
 
-## Recent updates (v0.2.0) on 23-Nov-22
-- Added daily dialog task
-- Fixed compatibility issues with some Seq2seq models such as BART, blendorbot etc
-- Implemented data parallel support
-- Refactored policy classes
-
-## Recent updates (v0.2.1) 
-- Minor logging updates
-
----
-# Install
-
 ## Local Installation 
 ```bash
 git clone https://github.com/allenai/RL4LMs.git
@@ -52,17 +35,6 @@ cd RL4LMs
 pip install -e .
 ```
 
-## Docker
-We provide also a Dockerfile for development using docker containers containing all the dependencies.
-```bash
-docker build . -t rl4lms
-```
-
-## Additional dependencies
-
-Optionally, coreNLP libraries are required for certain metric computations (eg. SPICE) which can be downloaded through `cd rl4lms/envs/text_generation/caption_metrics/spice && bash get_stanford_models.sh`
-
----
 # Quick Start - Train PPO/NLPO using pre-defined YAML configs
 We provide a simple training API that can be invoked via train [script](https://github.com/allenai/RL4LMs/blob/main/scripts/training/train_text_generation.py) that allows to train PPO, NLPO or a supervised model by using a config file (YAML). 
 
@@ -315,19 +287,6 @@ WANDB_API_KEY=<YOUR-WANDB-API-KEY-HERE>  python scripts/training/train_text_gene
 
 ---
 
-# Citation
-
-```bibtex
-@inproceedings{Ramamurthy2022IsRL,
-  title={Is Reinforcement Learning (Not) for Natural Language Processing?: Benchmarks, Baselines, and Building Blocks for Natural Language Policy Optimization},
-  author={Rajkumar Ramamurthy and Prithviraj Ammanabrolu and Kiant{\'e} Brantley and Jack Hessel and Rafet Sifa and Christian Bauckhage and Hannaneh Hajishirzi and Yejin Choi},
-  journal={arXiv preprint arXiv:2210.01241},
-  url={https://arxiv.org/abs/2210.01241},
-  year={2022}
-}
-```
-
-# Questions/Discussion/Ideas?
 
 For discussion, questions, ideas exchange, join our slack channel 
 [![Slack](https://img.shields.io/badge/Slack-4A154B?style=for-the-badge&logo=slack&logoColor=white)](https://join.slack.com/t/slack-1sa3880/shared_invite/zt-1idqlnbnm-NIiZeMIOpYReXfX9uIT_PA)
