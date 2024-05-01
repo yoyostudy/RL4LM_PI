@@ -1,20 +1,13 @@
-<p align="center">
-  <img src="RL4LMs_logo.png" width=512px>
-</p>
+
 
 <h1 align="center"> :robot: RL4LMs :rocket: </h1>
 
-<h3 align="center"> A modular RL library to fine-tune language models to human preferences </h3>
+<h3 align="center"> TBD </h3>
 
 <br>
 
 We provide easily customizable building blocks for training language models including implementations of **on-policy algorithms**, **reward functions**, **metrics**, **datasets** and **LM based actor-critic policies**
 
-Paper Link: https://arxiv.org/abs/2210.01241
-
-Website Link: https://rl4lms.apps.allenai.org/
-
-Thoroughly **tested** and **benchmarked** with over **2000 experiments** :fire: (GRUE benchmark :trophy:) on a comprehensive set of: 
 - Two new different Natural Language Processing (NLP) Tasks for prompt injection:
     - Password Guessor
     - Prompt Injection Generation
@@ -30,8 +23,8 @@ All of these building blocks can be customizable allowing users to train transfo
 
 ## Local Installation 
 ```bash
-git clone https://github.com/allenai/RL4LMs.git
-cd RL4LMs
+git clone https://github.com/yoyostudy/RL4LM_PI.git
+cd RL4LM_PI
 pip install -e .
 ```
 
