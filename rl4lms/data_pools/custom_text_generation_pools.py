@@ -16,14 +16,14 @@ class PIGen(TextGenPool):
     @classmethod
     def prepare(cls, split: str , prefix: str, concept_end_token: str, concept_separator_token: str ) -> 'TextGenPool':
         dataset = load_dataset("json", data_files={
-            "train": "rl4lms/data_pools/pi_data/pi_train.json",
-            "val": "rl4lms/data_pools/pi_data/pi_val.json",
-            "test": "rl4lms/data_pools/pi_data/pi_test.json"
+            "train": "rl4lms/data_pools/pi_data/pi_gen_data/train.json",
+            "val": "rl4lms/data_pools/pi_data/pi_gen_data/val.json",
+            "test": "rl4lms/data_pools/pi_data/pi_gen_data/test.json"
         })
         dataset_split = dataset[split]
         samples = []
         for ix, item in enumerate(dataset_split):
-            prompt_text = 'Based on those hint:' + item['hint'] 
+            prompt_text = 'Based on those payloads:' + item['payload'] 
             ref_text = item['attack']
             sample = Sample(id=f"{split}_{ix}",
                             prompt_or_input_text= prefix + concept_separator_token + prompt_text + concept_end_token, 

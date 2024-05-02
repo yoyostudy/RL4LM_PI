@@ -1,5 +1,5 @@
 tokenizer:
-  model_name: pre_trained/pi_sft_t5 
+  model_name: t5-base #pre_trained/pi_sft_t5 
   padding_side: left
   truncation_side: left
   pad_token_as_eos_token: False
@@ -44,7 +44,7 @@ alg:
       apply_model_parallel: False # True
       generation_kwargs:
         do_sample: True
-        top_k: 10 #5 #10 #50
+        top_k: 20 #5 #10 #50
 
 train_evaluation:
   eval_batch_size: 2

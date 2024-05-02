@@ -58,4 +58,4 @@ train_evaluation:
     do_sample: True
     top_k: 50
     min_length: 10
-    max_new_tokens: 20
+    max_new_tokens: 50
