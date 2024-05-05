@@ -4,9 +4,8 @@
 
 <h3 align="center"> TBD </h3>
 
-<br>
 - One high level model for decision making
 - Two Low level different Natural Language Processing (NLP) Tasks for prompt injection:
     - Password Guessor
     - Prompt Injection Generation
-- Pretrained model for reward function:
+- Pretrained model for reward function
