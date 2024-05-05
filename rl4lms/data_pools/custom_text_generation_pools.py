@@ -2,9 +2,7 @@ from rl4lms.data_pools.text_generation_pool import TextGenPool, Sample
 from rl4lms.data_pools.task_utils.totto import preprocess_utils
 from datasets import load_dataset
 from tqdm import tqdm
-from nltk.tokenize import word_tokenize
 import os
-from urllib.request import urlretrieve
 from pathlib import Path
 import pandas
 from collections import defaultdict
@@ -32,10 +30,3 @@ class PIGen(TextGenPool):
             samples.append(sample)
         pool_instance = cls(samples)
         return pool_instance
-
-if __name__ == "__main__":
-    from transformers import AutoTokenizer
-    import numpy as np
-    dp = IMDB.prepare("test", 42)
-    print(dp[0])
-    
