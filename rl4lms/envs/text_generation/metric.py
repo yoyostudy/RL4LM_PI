@@ -11,8 +11,8 @@ from rl4lms.envs.text_generation.caption_metrics.cider import Cider
 from rl4lms.envs.text_generation.caption_metrics.spice.spice import Spice
 from gem_metrics.texts import Predictions
 from rl4lms.envs.text_generation.summ_metrics.summa_c import SummaCConv, SummaCZS
-from rl4lms.data_pools.task_utils.totto.eval_utils import compute_parent, compute_bleu
-from rl4lms.data_pools.custom_text_generation_pools import DailyDialog
+#from rl4lms.data_pools.task_utils.totto.eval_utils import compute_parent, compute_bleu
+#from rl4lms.data_pools.custom_text_generation_pools import DailyDialog
 from tqdm import tqdm
 import copy
 import rouge

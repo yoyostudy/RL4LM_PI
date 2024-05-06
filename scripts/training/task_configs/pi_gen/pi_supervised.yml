@@ -14,7 +14,7 @@ datapool:
 alg:
   id: supervised
   training_args:
-    per_device_train_batch_size: 1
+    per_device_train_batch_size: 2
     logging_steps: 5000
     num_train_epochs: 40
     weight_decay: 0.01
@@ -26,14 +26,14 @@ alg:
   generation_kwargs:
     num_beams: 5
     min_length: 5
-    max_new_tokens: 40 #20
+    max_new_tokens: 60 #20
     post_processing_fn: null
 
 train_evaluation:
   eval_batch_size: 2 
   n_iters: 10
-  eval_every: 10
-  save_every: 20
+  eval_every: 2
+  save_every: 10
   metrics:
     - id: meteor
       args: {}
@@ -58,4 +58,4 @@ train_evaluation:
     do_sample: True
     top_k: 50
     min_length: 10
-    max_new_tokens: 50
+    max_new_tokens: 60

@@ -1,5 +1,4 @@
 from rl4lms.data_pools.text_generation_pool import TextGenPool, Sample
-from rl4lms.data_pools.task_utils.totto import preprocess_utils
 from datasets import load_dataset
 from tqdm import tqdm
 import os
@@ -14,9 +13,9 @@ class PIGen(TextGenPool):
     @classmethod
     def prepare(cls, split: str , prefix: str, concept_end_token: str, concept_separator_token: str ) -> 'TextGenPool':
         dataset = load_dataset("json", data_files={
-            "train": "rl4lms/data_pools/pi_data/pi_gen_data/train.json",
-            "val": "rl4lms/data_pools/pi_data/pi_gen_data/val.json",
-            "test": "rl4lms/data_pools/pi_data/pi_gen_data/test.json"
+            "train": "scripts/pi/pi_data/pi_gen_data/train.json",
+            "val"  : "scripts/pi/pi_data/pi_gen_data/val.json",
+            "test": "scripts/pi/pi_data/pi_gen_data/test.json"
         })
         dataset_split = dataset[split]
         samples = []

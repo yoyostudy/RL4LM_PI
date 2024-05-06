@@ -9,18 +9,6 @@ from rl4lms.algorithms.ppo.ppo import PPO
 from rl4lms.algorithms.trpo import TRPO
 from rl4lms.data_pools.custom_text_generation_pools import (
     PIGen, # my custom dataset
-    IMDB,
-    WMT,
-    CNNDailyMail,
-    CommonGen,
-    CRD3DialogueGeneration,
-    IMDBForSeq2Seq,
-    IWSLT2017EnDe,
-    NarrativeQA,
-    ToTTo,
-    WMT14PreprocessedEnDe,
-    WMT16NewsOnlyDatasetEnDe,
-    DailyDialog,
 )
 from rl4lms.data_pools.text_generation_pool import TextGenPool
 from rl4lms.envs.text_generation.alg_wrappers import wrap_onpolicy_alg
@@ -58,24 +46,7 @@ from rl4lms.envs.text_generation.policy.seq2seq_policy import (
 from rl4lms.envs.text_generation.post_processors import three_sentence_summary
 from rl4lms.envs.text_generation.reward import (
     PIReward, # my custom reward
-    TER,
-    BatchedCommonGenPenaltyShapingFunction,
-    BERTScoreRewardFunction,
-    BLEURewardFunction,
-    BLEURTRewardFunction,
-    CommonGenPenaltyShapingFunction,
-    LearnedRewardFunction,
-    LearnedBatchedRewardFunction,
-    MeteorRewardFunction,
-    PARENTRewardFunction,
-    RewardFunction,
-    RougeCombined,
-    RougeLMaxRewardFunction,
-    RougeRewardFunction,
-    SacreBleu,
-    SpiderRewardFunction,
-    chrF,
-    IntentAccuracy,
+    RewardFunction
 )
 from rl4lms.envs.text_generation.preference_reward import CommonGenPrefRM
 from rl4lms.envs.text_generation.test_datapool import TestTextGenPool
@@ -89,19 +60,6 @@ from rl4lms.envs.text_generation.test_reward import (
 class DataPoolRegistry:
     _registry = {
         "pi_gen": PIGen, # my custom dataset
-        "dummy_pool": TestTextGenPool,
-        "imdb": IMDB,
-        "commongen": CommonGen,
-        "totto": ToTTo,
-        "cnn_daily_mail": CNNDailyMail,
-        "imdb_seq2seq": IMDBForSeq2Seq,
-        "narrative_qa": NarrativeQA,
-        "wmt16": WMT,
-        "wmt14_processed_en_de": WMT14PreprocessedEnDe,
-        "wmt16newsonly": WMT16NewsOnlyDatasetEnDe,
-        "iwslt2017en_de": IWSLT2017EnDe,
-        "crd3": CRD3DialogueGeneration,
-        "daily_dialog": DailyDialog,
     }
 
     @classmethod
@@ -118,25 +76,6 @@ class DataPoolRegistry:
 class RewardFunctionRegistry:
     _registry = {
         "pi_reward": PIReward, # my custom reward
-        "increasing_numbers": RewardIncreasingNumbers,
-        "sentences_with_dates": RewardSentencesWithDates,
-        "learned_reward": LearnedBatchedRewardFunction,
-        "meteor": MeteorRewardFunction,
-        "rouge": RougeRewardFunction,
-        "bert_score": BERTScoreRewardFunction,
-        "bleu": BLEURewardFunction,
-        "bleurt": BLEURTRewardFunction,
-        "rouge_combined": RougeCombined,
-        "spider": SpiderRewardFunction,
-        "common_gen_repeat_penalty": CommonGenPenaltyShapingFunction,
-        "common_gen_repeat_penalty_batched": BatchedCommonGenPenaltyShapingFunction,
-        "parent": PARENTRewardFunction,
-        "sacre_bleu": SacreBleu,
-        "rouge_l_max": RougeLMaxRewardFunction,
-        "ter": TER,
-        "chrf": chrF,
-        "intent_accuracy": IntentAccuracy,
-        "common_gen_preference_model": CommonGenPrefRM,
     }
 
     @classmethod
