@@ -4,8 +4,8 @@
 
 <h3 align="center"> TBD </h3>
 
-- One high level model for decision making
-- Two Low level different Natural Language Processing (NLP) Tasks for prompt injection:
+- One high level policy model for decision making
+- Two Low level policy for two prompt injection attack tasks:
     - Password Guessor
     - Prompt Injection Generation
 - Pretrained model for reward function
