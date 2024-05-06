@@ -9,3 +9,4 @@
     - Password Guessor
     - Prompt Injection Generation
 - Pretrained model for reward function
+- A Finite State Machine for transition between the low-level policy, triggered by high level policy
