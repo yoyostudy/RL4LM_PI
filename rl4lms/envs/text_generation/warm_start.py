@@ -91,23 +91,16 @@ class OffPolicyWarmStartMixin:
 class TrainerWarmStartMixin:
     def _get_recent_ckpt_path(self, tracker: Tracker):
         try:
-            checkpoints = os.listdir(tracker.checkpoint_base_path)
+             checkpoints = os.listdir(tracker.checkpoint_base_path)
         except:
             os.makedirs(tracker.checkpoint_base_path)
             checkpoints = os.listdir(tracker.checkpoint_base_path)
 
-        
-        # TODO: MODIFY HERE 
-        checkpoints = []
-
         if len(checkpoints) == 0:
             return None, None
         
-
-        print(checkpoints)
         sorted_ckpts = sorted(checkpoints, reverse=True,
                               key=lambda ckpt: int(ckpt.split("_")[1]))
-        print(sorted_ckpts)
         
         recent_ckpt = sorted_ckpts[0]
         recent_ckpt_id = int(recent_ckpt.split("_")[1])
@@ -119,10 +112,6 @@ class TrainerWarmStartMixin:
     def load_trainer_state(self, tracker: Tracker):
         recent_ckpt_path, _ = self._get_recent_ckpt_path(tracker)
         state_dict = None
-        
-        # TODO: MODIFY HERE IF YOU DO NOT WANT TO CONTINUE TRAINING FROM A CHECKPOINT
-        # recent_ckpt_path = None
-        print(recent_ckpt_path)
         
         try:
             if recent_ckpt_path is not None:
