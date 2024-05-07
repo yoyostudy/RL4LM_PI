@@ -1,5 +1,5 @@
 tokenizer:
-  model_name: pre_trained/pi_sft_t5  # DO NOT REMOVE t5, action_space manually adjust based on this
+  model_name: t5-base
   padding_side: left 
   truncation_side: left
   pad_token_as_eos_token: False
@@ -28,7 +28,7 @@ alg:
   id: nlpo
   args: 
     n_steps: 64 #256
-    batch_size: 8 #64
+    batch_size: 2 #64
     verbose: 1
     learning_rate: 0.000002
     n_epochs: 5 
@@ -39,7 +39,7 @@ alg:
   policy:
     id: maskable_seq2seq_lm_actor_critic_policy
     args:
-      model_name: pre_trained/pi_sft_t5
+      model_name: pre_trained/pi_gen_sft_small
       apply_model_parallel: False # True
       mask_type: "learned_top_p"
       top_mask: 0.9

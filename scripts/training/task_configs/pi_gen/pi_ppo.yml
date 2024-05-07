@@ -39,11 +39,11 @@ alg:
   policy:
     id: seq2seq_lm_actor_critic_policy
     args:
-      model_name: pre_trained/pi_gen_sft
+      model_name: pre_trained/pi_gen_sft_small
       apply_model_parallel: False 
       generation_kwargs:
         do_sample: True
-        top_k: 20 
+        top_k: 10 
 
 train_evaluation:
   eval_batch_size: 2
@@ -74,4 +74,4 @@ train_evaluation:
     do_sample: True
     top_k: 5 
     min_length: 1
-    max_new_tokens: 60 
+    max_new_tokens: 50 

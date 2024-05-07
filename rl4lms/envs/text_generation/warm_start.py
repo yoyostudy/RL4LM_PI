@@ -91,7 +91,7 @@ class OffPolicyWarmStartMixin:
 class TrainerWarmStartMixin:
     def _get_recent_ckpt_path(self, tracker: Tracker):
         try:
-             checkpoints = os.listdir(tracker.checkpoint_base_path)
+            checkpoints = os.listdir(tracker.checkpoint_base_path)
         except:
             os.makedirs(tracker.checkpoint_base_path)
             checkpoints = os.listdir(tracker.checkpoint_base_path)

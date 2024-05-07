@@ -85,6 +85,7 @@ class PIReward(RewardFunction):
         if done:
             text = current_observation.context_text
             if self._classifier(text)[0]['label'] == 'SAFE':
+                print(self._classifier(text)[0]['label'])
                 reward = 0
             else:
                 reward = 1
