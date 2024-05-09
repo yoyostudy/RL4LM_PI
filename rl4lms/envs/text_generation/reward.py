@@ -14,7 +14,6 @@ from rl4lms.envs.text_generation.metric import (
     RougeLMax,
     TERMetric,
     chrFmetric,
-    IntentAccuracyDailyDialog,
 )
 import numpy as np
 from typing import List, Dict, Any

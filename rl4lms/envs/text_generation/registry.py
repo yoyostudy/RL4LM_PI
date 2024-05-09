@@ -9,6 +9,7 @@ from rl4lms.algorithms.ppo.ppo import PPO
 from rl4lms.algorithms.trpo import TRPO
 from rl4lms.data_pools.custom_text_generation_pools import (
     PIGen, # my custom dataset
+    PIExt,
 )
 from rl4lms.data_pools.text_generation_pool import TextGenPool
 from rl4lms.envs.text_generation.alg_wrappers import wrap_onpolicy_alg
@@ -32,7 +33,6 @@ from rl4lms.envs.text_generation.metric import (
     SummaCZSMetric,
     TERMetric,
     chrFmetric,
-    IntentAccuracyDailyDialog,
 )
 from rl4lms.envs.text_generation.policy.base_policy import LMActorCriticPolicy
 from rl4lms.envs.text_generation.policy.causal_policy import (
@@ -60,6 +60,7 @@ from rl4lms.envs.text_generation.test_reward import (
 class DataPoolRegistry:
     _registry = {
         "pi_gen": PIGen, # my custom dataset
+        "pi_ext": PIExt
     }
 
     @classmethod
@@ -111,7 +112,6 @@ class MetricRegistry:
         "sacre_bleu": SacreBLEUMetric,
         "ter": TERMetric,
         "chrf": chrFmetric,
-        "intent_accuracy": IntentAccuracyDailyDialog,
     }
 
     @classmethod
